@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
 import './Property.css';
-import ImageCarousel from '../components/ImageCarousel';
+// import ImageCarousel from '../components/ImageCarousel';
 import ContactForm from '../components/ContactForm';
 import DOMPurify from 'dompurify';
 import { Link } from 'react-router-dom';
@@ -77,7 +77,7 @@ export default function Property() {
                         <Grid item xs={1} md={1} lg={1}></Grid>
                         <Grid item xs={10} md={10} lg={10}>
                             <Box className="carousel-box">
-                                <ImageCarousel property={property} />
+                                {/* <ImageCarousel property={property} /> */}
                             </Box>
                         </Grid>
                         <Grid item xs={1} md={1} lg={1}></Grid>
