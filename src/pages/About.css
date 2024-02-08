@@ -1,0 +1,44 @@
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 700px) {
+    .contactbox {
+        width: 40rem;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .contact-container {
+        justify-content: center;
+    }
+    .about-text {
+        font-size: 20px !important;
+    }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 999px) {
+    .contactbox {
+        width: 40rem;
+    }
+    .about-text {
+        font-size: 25px !important;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+    .input-column {
+        margin-right: 15px;
+    }
+    .contactbox {
+        width: 40rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .input-column {
+        margin-right: 15px;
+    }
+}

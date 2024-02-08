@@ -1,0 +1,26 @@
+.dashboardmain {
+    position: relative;
+    top: 8vh;
+    margin-bottom: 50px;
+    background-image: linear-gradient(#24c5f3, white);
+    padding-top: 20px;
+}
+
+.dashboardmain h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+    border: 3px solid #333;
+    margin-right: 35vw;
+    margin-left: 35vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-radius: 10px;
+    background-color:white;
+}
+
+.footerbox {
+    margin-top: 19px !important;
+}

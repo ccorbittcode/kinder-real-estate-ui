@@ -1,0 +1,62 @@
+.home {
+    position: relative;
+    text-align: center;
+    background-color: white;
+}
+
+.homeheader {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    color: #023047;
+}
+
+@media only screen and (max-width: 700px) {
+    .homeheader {
+        top: 19%;
+        width: 80%;
+    }
+    .contactbox {
+        width: 40rem;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .contact-container {
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 999px) {
+    .homeheader {
+        top: 20%;
+        width: 80%;
+    }
+    .contactbox {
+        width: 40rem;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+    .homeheader {
+        top: 24%;
+        width: 50%;
+    }
+    .input-column {
+        margin-right: 15px;
+    }
+    .contactbox {
+        width: 40rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .homeheader {
+        top: 25%;
+        width: 50%;
+    }
+    .input-column {
+        margin-right: 15px;
+    }
+}

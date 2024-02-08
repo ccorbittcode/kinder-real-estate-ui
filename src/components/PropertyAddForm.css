@@ -1,0 +1,13 @@
+.text-area-input {
+    background-color: white;
+    margin-left: 8px;
+
+}
+.ql-container {
+    height: auto !important;
+}
+
+.ql-editor {
+    height: 200px; /* Set this to your desired height */
+    overflow-y: auto;
+}

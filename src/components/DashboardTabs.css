@@ -1,0 +1,44 @@
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.slide-in {
+    animation: slide-in 0.5s forwards;
+    margin: 4%;
+    padding-bottom: 4%;
+}
+
+.slide-out {
+    animation: slide-out 0.5s forwards;
+    margin: 4%;
+    padding-bottom: 4%;
+}
+
+@media screen and (min-width: 1000px) {
+    .property-form-box {
+        justify-content: center;
+        width: 80%;
+        align-items: left;
+        margin: auto;
+    }
+}

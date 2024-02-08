@@ -1,0 +1,83 @@
+.property-main {
+    position: relative;
+    top: 5.5vh;
+    font-family: roboto, sans-serif, arial ;
+    background-image: linear-gradient(#24c5f3, white);
+    margin-bottom: 80px;
+}
+.header {
+    text-align: center;
+}
+
+.property-details-box p {
+    text-align: left;
+    padding-left: 40px;
+}
+.carousel-box{
+    max-width: 1000px;
+    margin: auto;
+}
+h1 {
+    padding-top: 40px;
+}
+
+.description-box h3 {
+    text-align: center;
+    margin-top: 5px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #023047;
+}
+
+.property-details-header {
+    margin-top: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #023047;
+}
+
+@media only screen and (max-width: 1199px) {
+    .property-details-box {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .contactbox {
+        width: 40rem;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .contact-container {
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 999px) {
+    .contactbox {
+        width: 40rem;
+    }
+    .property-container {
+        align-items: center !important;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1199px) {
+    .input-column {
+        margin-right: 15px;
+    }
+    .contactbox {
+        width: 40rem;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .input-column {
+        margin-right: 15px;
+    }
+    .property-details-box {
+        max-width: 100%;
+        margin-bottom: 0px !important;
+    }
+
+}

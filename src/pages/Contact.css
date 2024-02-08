@@ -1,0 +1,12 @@
+h1 {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 10px;
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 96.5%;
+}

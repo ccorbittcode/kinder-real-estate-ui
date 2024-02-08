@@ -1,0 +1,25 @@
+.signup-box input{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #023047;
+    outline: none;
+    color: #023047;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.signup-box button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    color: #023047;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #0910e6;
+    cursor: pointer;
+}

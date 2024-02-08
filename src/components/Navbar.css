@@ -1,0 +1,25 @@
+.container {
+    margin-left: 0;
+    width: 100%;
+}
+
+.navbarlink {
+    text-decoration: none;
+    color: white;
+}
+
+.navbarmenulink {
+    text-decoration: none;
+    color: black;
+}
+
+.homelink {
+    text-decoration: none;
+    color: #000;
+}
+
+.active {
+    border-bottom: 10px solid slategrey;
+    border-radius: 5px;
+    padding-bottom: 17px;
+}
