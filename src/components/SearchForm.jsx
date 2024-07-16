@@ -71,7 +71,7 @@ export default function SearchForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5000/search?rentOrSale=${rentOrSale}&city=${city}&bedrooms=${bedrooms}&bathrooms=${bathrooms}&price=${price}&keyword=${keyword}`);
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/search?rentOrSale=${rentOrSale}&city=${city}&bedrooms=${bedrooms}&bathrooms=${bathrooms}&price=${price}&keyword=${keyword}`);
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
             }
