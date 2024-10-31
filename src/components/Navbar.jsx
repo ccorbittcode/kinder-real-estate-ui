@@ -17,9 +17,8 @@ import { ThemeProvider } from '@mui/material';
 import './Navbar.css';
 import { NavLink, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { UserContext } from './UserContext';
-import { useContext } from 'react';
 
 const theme = createTheme({
   palette: {
@@ -42,12 +41,12 @@ const pages = [
   { name: 'Properties', path: '/properties' },
   { name: 'Contact', path: '/contact' },
   { name: 'About Us', path: '/about' },
-]
+];
 
 const settings = [
   { name: 'Dashboard', path: '/dashboard' },
   { name: 'Register New Realtor', path: '/signup' },
-]
+];
 
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -74,13 +73,13 @@ export default function Navbar() {
     handleCloseNavMenu();
     navigate(path);
     window.scrollTo(0, 0);
-  }
+  };
 
   const handleUserClick = (path) => {
     handleCloseUserMenu();
     navigate(path);
     window.scrollTo(0, 0);
-  }
+  };
 
   const handleLogout = async () => {
     // Make a GET request to the logout route
@@ -100,7 +99,7 @@ export default function Navbar() {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="fixed" >
+      <AppBar position="fixed">
         <Container maxWidth="xl" className='container'>
           <Toolbar disableGutters className='toolbar'>
             <VillaTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -218,38 +217,33 @@ export default function Navbar() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  user && (
-                    <MenuItem
-                      key={setting.name}
-                      onClick={() => handleUserClick(setting.path)}
-                    >
+                {user ? (
+                  <>
+                    {settings.map((setting) => (
+                      <MenuItem
+                        key={setting.name}
+                        onClick={() => handleUserClick(setting.path)}
+                      >
+                        <Typography textAlign="center">
+                          <Link to={setting.path} className='navbarmenulink'>
+                            {setting.name}
+                          </Link>
+                        </Typography>
+                      </MenuItem>
+                    ))}
+                    <MenuItem key='logout' onClick={handleLogout}>
                       <Typography textAlign="center">
-                        <Link to={setting.path} className='navbarmenulink'>
-                          {setting.name}
-                        </Link>
+                        Logout
                       </Typography>
                     </MenuItem>
-                  )
-                ))}
-                {!user && (
-                  <MenuItem
-                    key='login'
-                    onClick={() => handleUserClick('/login')}
-                  >
+                  </>
+                ) : (
+                  <MenuItem key='login' onClick={() => handleUserClick('/login')}>
                     <Typography textAlign="center">
                       <Link to='/login' className='navbarmenulink'>
                         Realtor Login
                       </Link>
                     </Typography>
-                  </MenuItem>
-                )}
-                {user && (
-                  <MenuItem
-                    key='logout'
-                    onClick={handleLogout}
-                  >
-                    Logout
                   </MenuItem>
                 )}
               </Menu>
