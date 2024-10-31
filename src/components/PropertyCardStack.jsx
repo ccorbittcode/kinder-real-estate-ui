@@ -12,6 +12,27 @@ export default function PropertyCardStack() {
     // This method fetches the records from the database.
     useEffect(() => {
         async function getProperties() {
+            try {
+                const response = await fetch(`${import.meta.env.VITE_BASE_URL}/properties`);
+                if (!response.ok) {
+                    const message = `An error occurred: ${response.statusText}`;
+                    window.alert(message);
+                    console.error(message);
+                    return;
+                }
+                const properties = await response.json();
+                setProperties(properties);
+            } catch (error) {
+                const message = `An error occurred: ${error.message}`;
+                window.alert(message);
+                console.error(message);
+            }
+        }
+        getProperties();
+        return;
+    }, [properties.length]);
+    /* useEffect(() => {
+        async function getProperties() {
             const response = await fetch(`${import.meta.env.VITE_BASE_URL}/properties`);
             if (!response.ok) {
                 const message = `An error occurred: ${response.statusText}`;
@@ -23,7 +44,7 @@ export default function PropertyCardStack() {
         }
         getProperties();
         return;
-    }, [properties.length]);
+    }, [properties.length]); */
     return (
         <Box sx={{
             flexGrow: 1,

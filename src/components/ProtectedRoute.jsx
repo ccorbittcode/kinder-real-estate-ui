@@ -8,32 +8,40 @@ function ProtectedRoute({ children }) {
 
   useEffect(() => {
     const checkAuth = async () => {
-      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/auth/check`, {credentials: 'include'});
+      try {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/auth/check`, { credentials: 'include' });
 
-      if (!response.ok) {
-        const text = await response.text();
-        console.error('Unexpected response:', text);
-        return;
-      }
+        if (!response.ok) {
+          const text = await response.text();
+          console.error('Unexpected response:', text);
+          setIsLoading(false);
+          navigate('/login');
+          return;
+        }
 
-      const data = await response.json();
+        const data = await response.json();
+        setIsAuthenticated(data.isAuthenticated);
+        setIsLoading(false);
 
-      setIsAuthenticated(data.isAuthenticated);
-      setIsLoading(false);
-
-      if (!data.isAuthenticated) {
+        if (!data.isAuthenticated) {
+          navigate('/login');
+        }
+      } catch (error) {
+        console.error('Error checking authentication:', error);
+        setIsLoading(false);
         navigate('/login');
       }
     };
 
     checkAuth();
+    
   }, [navigate]);
 
   if (isLoading) {
-    return null; // Or a loading spinner
+    return <div>Loading...</div>; // Or a loading spinner
   }
 
-  return children;
+  return isAuthenticated ? children : null;
 }
 
 export default ProtectedRoute;
