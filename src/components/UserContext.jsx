@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PopUpSnackbar from './PopUpSnackbar';
 
 export const UserContext = React.createContext();
@@ -12,6 +12,12 @@ export function UserProvider({ children, initialUser, initialSetUser }) {
         setSnackbarMessage(message);
         setSnackbarOpen(true);
     };
+
+    useEffect(() => {
+        if (initialUser) {
+            setUser(initialUser);
+        }
+    }, [initialUser]);
 
     return (
         <UserContext.Provider value={{ user, setUser: initialSetUser || setUser, snackbarOpen, setSnackbarOpen, showSnackbar }}>
