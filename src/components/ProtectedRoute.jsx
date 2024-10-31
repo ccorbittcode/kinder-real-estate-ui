@@ -34,6 +34,7 @@ function ProtectedRoute({ children }) {
     };
 
     checkAuth();
+    
   }, [navigate]);
 
   if (isLoading) {
