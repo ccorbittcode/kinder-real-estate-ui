@@ -16,6 +16,7 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom"
+import { UserProvider } from './components/UserContext';
 
 const router = createBrowserRouter([
   {
@@ -74,7 +75,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <RouterProvider router={router} />
+      <UserProvider>
+        <RouterProvider router={router} />
+      </UserProvider>
   )
 }
 
