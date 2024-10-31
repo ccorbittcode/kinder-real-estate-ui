@@ -1,11 +1,10 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PopUpSnackbar from './PopUpSnackbar';
 
 export const UserContext = React.createContext();
 
-export function UserProvider({ children }) {
-    const [user, setUser] = useState(null);
+export function UserProvider({ children, initialUser, initialSetUser }) {
+    const [user, setUser] = useState(initialUser || null);
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
 
@@ -15,7 +14,7 @@ export function UserProvider({ children }) {
     };
 
     return (
-        <UserContext.Provider value={{ user, setUser, snackbarOpen, setSnackbarOpen, showSnackbar }}>
+        <UserContext.Provider value={{ user, setUser: initialSetUser || setUser, snackbarOpen, setSnackbarOpen, showSnackbar }}>
             {children}
             <PopUpSnackbar
                 open={snackbarOpen}
