@@ -10,8 +10,7 @@ function LoginForm() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const { setUser, showSnackbar } = useContext(UserContext);
-
-
+    
     const handleLogin = async (event) => {
         event.preventDefault();
 
@@ -32,11 +31,11 @@ function LoginForm() {
             } else {
                 // Handle login failure
                 showSnackbar('Login failed');
-                setSnackbarOpen(true);
             }
         } catch (error) {
             // Handle error
-            console.error(error);
+            console.error('Error during login:', error);
+            showSnackbar('An error occurred. Please try again.');
         }
     };
 
@@ -46,16 +45,14 @@ function LoginForm() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-        }}
-        >
+        }}>
             <form onSubmit={handleLogin}>
                 <Box className="signup-box" sx={{
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
                     maxWidth: "500px"
-                }}
-                >
+                }}>
                     <Typography variant="h4" sx={{ m: 2 }}>
                         Realtor Login
                     </Typography>
